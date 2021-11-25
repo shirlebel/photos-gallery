@@ -1,0 +1,40 @@
+<div class="gallery-container" fxLayout="column" fxFlexFill fxFlex="1 1 100">
+
+    <!-- view change btns -->
+    <div class="view-btn-container" fxLayout="row" fxLayoutAlign="end start" [fxFlex]="viewProportion.stateSection">
+        <!-- vertical view btn -->
+        <button (click)="changeViewState(ViewState.HORIZONTAL)" class="view-btn vertical"
+            [ngClass]="{'selected': galleryViewState === ViewState.HORIZONTAL, 'unselected': galleryViewState === ViewState.VERTICAL}">
+            <span class="material-icons-outlined">apps</span>
+        </button>
+
+        <!-- horizontal view btn -->
+        <button (click)="changeViewState(ViewState.VERTICAL)" class="view-btn horizontal"
+            [ngClass]="{'selected': galleryViewState === ViewState.VERTICAL, 'unselected': galleryViewState === ViewState.HORIZONTAL}">
+            <span class="material-icons-outlined">more_vert</span>
+        </button>
+    </div>
+
+    <!-- images -->
+    <div class="images" [fxLayout]="galleryViewState === ViewState.VERTICAL? 'column' : 'row'" fxLayoutGap="30px" fxLayoutAlign="space-between center" [fxFlex]="viewProportion.imagesSection">
+        <div *ngFor="let img of displayedImages" fxLayout="row" fxLayoutAlign="start center" class="image-container" fxFlex="1 1 100">
+            <img class="img-obj" src="{{img.url}}" alt="" fxFlex="1 1 100">
+
+            <!-- description -->
+            <span class="description" fxLayout="row" fxLayoutAlign="center center">{{img.description}}</span>
+
+            <!-- likes -->
+            <span class="likes" fxLayout="row" fxLayoutAlign="start center" fxFlex="1 1 30" fxLayoutGap="5px">
+                <span class="material-icons-outlined">favorite</span>
+                <span class="likes-count">{{img.likes}}</span>
+            </span>
+            
+        </div>
+    </div>
+
+    <!-- refresh btn -->
+    <div class="refresh-btn-container" fxLayout="row" fxLayoutAlign="center start" [fxFlex]="viewProportion.refreshSection">
+        <button (click)="refresh()" class="refresh-btn">Refresh</button>
+    </div>
+
+</div>

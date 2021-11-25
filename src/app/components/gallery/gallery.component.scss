@@ -1,0 +1,107 @@
+@import "material-icons/iconfont/material-icons.css";
+
+.gallery-container {
+    .view-btn-container {
+        width: 100%;
+        padding: 70px;
+        .view-btn {
+            color: white;
+            height: 55px;
+            width: 75px;
+            border: none;
+            font-size: 1.1em;
+            letter-spacing: 0.8px;
+            cursor: pointer;
+
+            .material-icons-outlined {
+                font-size: 35px;
+                margin-top: 7px;
+            }
+        }
+
+        .vertical {
+            border-radius: 7px 0 0 7px;
+        }
+
+        .horizontal {
+            border-radius: 0 7px 7px 0;
+        }
+
+        .selected {
+            background-color: #d3d9e6;
+        }
+
+        .unselected {
+            background-color: #f1f4f7;
+        }
+    }
+
+    .images {
+        padding: 70px;
+
+        .image-container {
+            position: relative;
+            border-radius: 15px;
+            width: 20%;
+            .img-obj {
+                border-radius: 15px;
+                position: absolute;
+                width: 100%;
+                object-fit: cover;
+                height: -webkit-fill-available;
+            }
+
+            .img-obj:hover {
+                cursor: pointer;
+                opacity: 0.5;
+            }
+
+            .description {
+                border-radius: 15px;
+                position: absolute;
+                padding: 15px;
+                width: 100%;
+                height: 100%;
+                color: rgba(255, 255, 255, 0);
+                text-align: center;
+            }
+
+            .description:hover {
+                color: white;
+                background-color: rgba(0, 0, 0, 0.8);
+                transition: all 0.2s linear;
+                cursor: pointer;
+            }
+
+            .likes {
+                color: white;
+                z-index: 9;
+                position: absolute;
+                bottom: 0;
+                padding: 10px;
+            }
+        }
+
+        .image-container:after {
+            content: "";
+            display: block;
+            padding-bottom: 100%;
+        }
+    }
+
+    .refresh-btn-container {
+        padding: 70px;
+
+        .refresh-btn {
+            background: #209eff;
+            color: white;
+            height: 50px;
+            width: 130px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.1em;
+            letter-spacing: 0.8px;
+            cursor: pointer;
+        }
+    }
+}

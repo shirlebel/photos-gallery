@@ -1,3 +1,12 @@
+1. run npm install to install all dependencies
+2. Open the folder in terminal/VS and run "ng serve --open"
+3. The project will probably run on port "localhost:4200" (or any other specified port)
+
+4. I assumed the size of images array is always > 5
+5. I assumed that if there is a problem with loading the images nothing will be displayed, and an error will pop
+6. The view state icons are not identical to those in the assignment, I tried to look for them but I haven't find them.
+I also tried to make a SVG from a screenshot but it got very blurred...
+
 # PhotosGallery
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
