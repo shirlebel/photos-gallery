@@ -36,8 +36,7 @@ export class GalleryComponent implements OnInit {
   public galleryViewState: ViewState;
   public displayedImages: IImage[] = [];
   public viewProportion: viewProportions;
-
-  private imagesList: IImage[];
+  public imagesList: IImage[];
 
   constructor(private galleryService: GalleryService) {
   }
@@ -52,7 +51,7 @@ export class GalleryComponent implements OnInit {
     this.viewProportion = HORIZONTAL_PROPORTIONS;
   }
 
-  private async getImages(): Promise<void> {
+  public async getImages(): Promise<void> {
     try {
       this.imagesList = await this.galleryService.getImages().toPromise();
 
@@ -78,7 +77,7 @@ export class GalleryComponent implements OnInit {
     this.viewProportion = state === ViewState.HORIZONTAL? HORIZONTAL_PROPORTIONS : VERTICAL_PROPORTIONS;
   }
 
-  private getRandomImages(numberOfRandom: number): void {
+  public getRandomImages(numberOfRandom: number): void {
     let result = new Array(numberOfRandom);
     let length = this.imagesList.length;
 
