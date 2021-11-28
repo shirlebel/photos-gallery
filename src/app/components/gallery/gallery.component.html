@@ -1,4 +1,4 @@
-<div class="gallery-container" fxLayout="column" fxFlexFill fxFlex="1 1 100">
+<div class="gallery-container"  fxLayout="column" fxFlexFill fxFlex="1 1 100">
 
     <!-- view change btns -->
     <div class="view-btn-container" fxLayout="row" fxLayoutAlign="end start" [fxFlex]="viewProportion.stateSection">
@@ -16,8 +16,8 @@
     </div>
 
     <!-- images -->
-    <div class="images" [fxLayout]="galleryViewState === ViewState.VERTICAL? 'column' : 'row'" fxLayoutAlign="space-between center" [fxFlex]="viewProportion.imagesSection">
-        <div *ngFor="let img of displayedImages" fxLayout="row" fxLayoutAlign="start center" class="image-container" fxFlex="1 1 16">
+    <div class="images" [ngClass]="{'wrap-class': galleryViewState === ViewState.HORIZONTAL}" [fxLayout]="galleryViewState === ViewState.VERTICAL? 'column' : 'row'" fxLayoutAlign="space-between center" [fxFlex]="viewProportion.imagesSection">
+        <div *ngFor="let img of displayedImages" [fxLayout]="galleryViewState === ViewState.VERTICAL? 'column' : 'row'" fxLayoutAlign="start center" class="image-container" fxFlex="1 1 16">
             <app-image fxFlex="1 1 100" [image]="img"></app-image>
         </div>
     </div>

@@ -7,6 +7,7 @@
     object-fit: cover;
     height: -webkit-fill-available;
     top: 0;
+    left: 0;
 }
 
 .img-obj:hover {
@@ -16,6 +17,7 @@
 
 .description {
     top: 0;
+    left: 0;
     border-radius: 15px;
     position: absolute;
     padding: 15px;
@@ -38,6 +40,7 @@
     z-index: 9;
     position: absolute;
     bottom: 0;
+    left: 0;
     padding: 10px;
 }
 

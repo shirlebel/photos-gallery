@@ -38,8 +38,6 @@
 
     .images {
         padding: 30px;
-        flex-wrap: wrap;
-        justify-content: space-between;
         gap: 30px;
 
         .image-container {
@@ -70,4 +68,9 @@
             cursor: pointer;
         }
     }
+}
+
+.wrap-class{
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

@@ -21,7 +21,7 @@ const HORIZONTAL_PROPORTIONS = {
 
 const VERTICAL_PROPORTIONS = {
   stateSection: "1 1 5",
-  imagesSection: "1 1 80",
+  imagesSection: "1 1 100",
   refreshSection: "1 1 15"
 }
 
