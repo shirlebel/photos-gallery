@@ -1,0 +1,10 @@
+<img class="img-obj" [src]="image.url" alt="" fxFlex="1 1 100">
+
+<!-- description -->
+<span class="description" fxLayout="row" fxLayoutAlign="center center">{{image.description}}</span>
+
+<!-- likes -->
+<span class="likes" fxLayout="row" fxLayoutAlign="start center" fxFlex="1 1 30" fxLayoutGap="5px">
+    <span class="material-icons-outlined">favorite</span>
+    <span class="likes-count">{{image.likes}}</span>
+</span>

@@ -14,9 +14,9 @@ interface viewProportions {
 }
 
 const HORIZONTAL_PROPORTIONS = {
-  stateSection: "1 1 20",
-  imagesSection: "1 1 50",
-  refreshSection: "1 1 30"
+  stateSection: "1 1 5",
+  imagesSection: "1 1 100",
+  refreshSection: "1 1 25"
 }
 
 const VERTICAL_PROPORTIONS = {
@@ -74,25 +74,25 @@ export class GalleryComponent implements OnInit {
     this.galleryViewState = state;
 
     //update view proportions
-    this.viewProportion = state === ViewState.HORIZONTAL? HORIZONTAL_PROPORTIONS : VERTICAL_PROPORTIONS;
+    this.viewProportion = state === ViewState.HORIZONTAL ? HORIZONTAL_PROPORTIONS : VERTICAL_PROPORTIONS;
   }
 
   public getRandomImages(numberOfRandom: number): void {
-    let result = new Array(numberOfRandom);
-    let length = this.imagesList.length;
-
-    //uses to check if we took a specific item already
-    let taken = new Array(length);
+    const length = this.imagesList.length;
 
     while (numberOfRandom--) {
       //get a random index from the original array
-      let num = Math.floor(Math.random() * length);
+      const num = Math.floor(Math.random() * length);
 
-      result[numberOfRandom] = this.imagesList[num in taken ? taken[num] : num];
-      taken[num] = --length in taken ? taken[length] : length;
+      const image = this.imagesList[num];
+      if (!this.displayedImages.some(x => x.url === image.url)) {
+        this.displayedImages.push(image);
+      }
+      else {
+        numberOfRandom++;
+      }
+
     }
-
-    this.displayedImages = result;
   }
 
   get ViewState() {

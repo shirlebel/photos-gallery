@@ -1,0 +1,47 @@
+@import 'material-icons/iconfont/material-icons.css';
+
+.img-obj {
+    border-radius: 15px;
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    height: -webkit-fill-available;
+    top: 0;
+}
+
+.img-obj:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.description {
+    top: 0;
+    border-radius: 15px;
+    position: absolute;
+    padding: 15px;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    color: rgba(255, 255, 255, 0);
+    text-align: center;
+    cursor: pointer;
+}
+
+.description:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+
+.likes {
+    color: white;
+    z-index: 9;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+}
+
+.material-icons-outlined {
+    font-size: 25px;
+    margin-top: 7px;
+}
